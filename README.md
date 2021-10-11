@@ -21,9 +21,9 @@ This template is made for Discord.js v13. Feel free to use them
 All the commands available
 
 
-|   Name    | Aliases |         Description         |
-|:----------|:-------:|----------------------------:|
-| **/help** |hlp,bantu| View all available commands |
-| **/ping** |  pong   |  Checks BOT Websocket Ping  |
+|   Name   | Aliases |         Description         |
+|:---------|:-------:|----------------------------:|
+| **help** |hlp,bantu| View all available commands |
+| **ping** |  pong   |  Checks BOT Websocket Ping  |
 
 

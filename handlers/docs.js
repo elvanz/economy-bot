@@ -18,7 +18,7 @@ module.exports.generateDocs = (commands) => {
     }
 
     commands.forEach((cmd) => {
-        tableData.rows.push([ `**/${cmd.name}**`, cmd.aliases, cmd.description]);
+        tableData.rows.push([ `**${cmd.name}**`, cmd.aliases, cmd.description]);
     });
 
     const finalReadme = `${aboveTable}${mdtable(tableData, tableSettings)}${belowTable}`;
