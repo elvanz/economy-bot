@@ -6,8 +6,8 @@ module.exports = client => {
         status: 'online',
         activities: [
             {
-                name: 'porn',
-                type: 'WATCHING'
+                name: 'your heart',
+                type: 'PLAYING'
             }
         ]
     });
