@@ -1,6 +1,6 @@
 module.exports = {
     name: 'help',
-    aliases: ['hlp', 'bantu'],
+    aliases: ['hlp', 'info'],
     description: 'View all available commands',
     /**
      * @param { Client } client
