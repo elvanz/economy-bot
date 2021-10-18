@@ -1,6 +1,8 @@
 const { Client, Intents, Collection, MessageEmbed } = require('discord.js');
+const { SlashCreator } = require('slash-create');
 const { registerEvents } = require('../handlers/events');
 const { registerCommands } = require('../handlers/commands');
+const { registerSlashCommands } = require('../handlers/slashcommands');
 
 class EconomyBot extends Client {
     constructor(){
@@ -18,7 +20,8 @@ class EconomyBot extends Client {
         */
         this.path = require('path'); 
         this.fs = require('fs');
-        
+        this.dotenv = require('dotenv');
+
         /**
          *  Collections
          */
@@ -28,10 +31,17 @@ class EconomyBot extends Client {
         /**
          *  Configs
          */
+        this.dotenv.config();
         this.prefix = 'e!';
+        this.creator = new SlashCreator({
+            applicationID: process.env.CLIENT_ID,
+            publicKey: process.env.CLIENT_PUBKEY,
+            token: process.env.CLIENT_TOKEN
+        });
     }
     commandHandler(client){
         registerCommands(client);
+        registerSlashCommands(client);
     }
     eventHandler(client){
         registerEvents(client);
@@ -45,14 +55,14 @@ class EconomyBot extends Client {
     embed(data){
         return new MessageEmbed(data);
     }
-    start(token){
+    start(){
         /**
          * Handlers 
          */
         this.commandHandler(this);
         this.eventHandler(this);
 
-        this.login(token);
+        this.login(process.env.CLIENT_TOKEN);
     }
 }
 module.exports = EconomyBot;
