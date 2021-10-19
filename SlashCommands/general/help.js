@@ -11,11 +11,11 @@ module.exports = class HelpCommand extends SlashCommand {
     }
 
     async run (ctx) {
-        const { Client } = require('../../index');
+        const { client } = require('../../index');
 
         await ctx.defer();
 
-        const embed = Client.embed({title: 'Help Command', description: 'All available commands that I have'})
+        const embed = client.embed({title: 'Help Command', description: 'All available commands that I have'});
 
         return ctx.send({embeds: [embed]});
     }

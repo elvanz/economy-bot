@@ -11,10 +11,10 @@ module.exports = class PingCommand extends SlashCommand {
     }
 
     async run (ctx) {
-        const { Client } = require('../../index');
+        const { client } = require('../../index');
 
         await ctx.defer();
 
-        return void ctx.sendFollowUp({ content: `BOT ping is ${Client.ws.ping}ms`});
+        return void ctx.sendFollowUp({ content: `BOT ping is ${client.ws.ping}ms`});
     }
 }

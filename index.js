@@ -1,2 +1,3 @@
-const Client = require('./structures/Client');
-new Client().start();
+const Bot = require('./structures/Client');
+const client = new Bot();
+client.start();
